@@ -1,3 +1,35 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  background-color: pink;
+  font-family: "Optima";
+}
+
+h1 {
+  background-color: red;
+  font-size: 60px;
+  text-align: center;
+  color: pink;
+  padding-bottom: 15px;
+}
+
+h3 {
+  background-color: red;
+  font-size: 30px;
+  text-align: center;
+  color: pink;
+  padding-top: 15px;
+  padding-bottom: 5px;
+}
+
+p {
+  font-size: 22px;
+  padding: 5px;
+  text-align: center;
+}
+
+.top {
+  padding-top: 50px;
+}
