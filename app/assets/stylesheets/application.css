@@ -13,3 +13,29 @@
  *= require_tree .
  *= require_self
  */
+
+.nav {
+  list-style-type: circle;
+  background-color: darkcyan;
+  text-align: center;
+}
+
+.button {
+  display:inline-block;
+  font-size: 14px;
+  padding: 9px;
+}
+
+.button a {
+  color: white;
+  font-family: "Optima";
+}
+
+.bday_message {
+  padding-top: 60px;
+}
+
+.bday_message_large {
+  padding-top: 80px;
+  font-size: 60px;
+}

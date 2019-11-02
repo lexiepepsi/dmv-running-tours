@@ -16,6 +16,10 @@
     <div>
       <h3>D.C. Maryland Virginia</h3>
       <h1>Running Tours by Ari</h1>
+      <ul class="nav">
+        <li class="button"> <%= link_to('Home', root_path) %></li>
+        <li class="button"> <%= link_to('Birthday Surprise', birthday_surprise_index_path) %></li>
+      </ul>
     </div>
     <%= yield %>
   </body>
