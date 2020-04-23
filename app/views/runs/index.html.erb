@@ -1,0 +1,75 @@
+<h3>All Runs</h3>
+</br>
+<table>
+  <tr>
+    <th></th>
+    <th>Name</th>
+    <th>Location</th>
+    <th>Distance</th>
+    <th>Duration</th>
+    <th>Description</th>
+  </tr>
+  <% @runs.each_with_index do |run, idx| %>
+    <tr>
+      <td><%= idx %></td>
+      <td><%= run.name %></td>
+      <td><%= run.location %></td>
+      <td><%= run.distance %> mi</td>
+      <td><%= run.duration %></td>
+      <td><%= run.description %></td>
+    </tr>
+  <% end %>
+</table>
+</br>
+</br>
+<% if flash[:notice] %>
+  <div class='notice'><%= flash[:notice] %></div>
+  </br>
+  </br>
+<% end %>
+
+<h3>Upload Runs</h3>
+</br>
+<div>
+  Create a .csv file with the following headers:
+  <strong>Name, Location, Distance, Duration, Description</strong>
+  </br>
+  </br>
+  <table>example:
+    <tr>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Distance</th>
+      <th>Duration</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>Run name</td>
+      <td>D.C.</td>
+      <td>4.1</td>
+      <td>40 mins - 1.5 hours</td>
+      <td>Run around the D.C. area</td>
+    </tr>
+  </table>
+</div>
+</br>
+</br>
+  <div>Upload with worker</div>
+</br>
+  <%= form_with(url: {action: :upload}, multipart: true) do %>
+    <%= file_field_tag 'runs' %>
+    <%= submit_tag("Import Runs-sidekiq") %>
+  <% end %>
+</br>
+</br>
+  <div>Upload in app/without worker</div>
+</br>
+  <%= form_with(url: {action: :upload_slow}, multipart: true) do %>
+    <%= file_field_tag 'runs' %>
+    <%= submit_tag("Import Runs") %>
+  <% end %>
+</br>
+</br>
+  <%= form_with(url: {action: :destroy_all}, multipart: true) do %>
+    <%= submit_tag("Delete All Runs") %>
+  <% end %>

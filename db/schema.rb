@@ -10,13 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_22_195914) do
+ActiveRecord::Schema.define(version: 2020_04_23_162206) do
 
   create_table "emails", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "runs", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.integer "distance"
+    t.string "duration"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name", "location"], name: "index_runs_on_name_and_location", unique: true
   end
 
 end
