@@ -6,7 +6,7 @@ Rails.application.initialize!
 
 ActionMailer::Base.smtp_settings = {
   :user_name => 'apikey',
-  :password => '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',
+  :password => '#{ENV['SENDGRID_API_KEY']}',
   :domain => 'dmv-running-tours.herokuapp.com',
   :address => 'smtp.sendgrid.net',
   :port => 587,
