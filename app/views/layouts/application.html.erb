@@ -4,7 +4,7 @@
     <title>Running Tours by Ari</title>
 
     <!-- CSS Reset -->
-    <link href="reset.css" type="text/css" rel="stylesheet">
+    <!-- <link href="reset.css" type="text/css" rel="stylesheet"> -->
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -19,8 +19,14 @@
       <ul class="nav">
         <li class="button"> <%= link_to('Home', root_path) %></li>
         <li class="button"> <%= link_to('Birthday Surprise', birthday_surprise_index_path) %></li>
+        <li class="button"> <%= link_to('Sign Up for Our Email List', emails_path) %></li>
       </ul>
     </div>
+
+    <% if flash.notice %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

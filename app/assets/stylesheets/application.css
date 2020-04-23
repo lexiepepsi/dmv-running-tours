@@ -24,6 +24,7 @@
   display:inline-block;
   font-size: 14px;
   padding: 9px;
+  text-align: center;
 }
 
 .button a {
@@ -38,4 +39,20 @@
 .bday_message_large {
   padding-top: 80px;
   font-size: 60px;
+}
+
+.notice {
+  color: white;
+  background-color: darkcyan;
+  margin: 20px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.email_div {
+  padding-top: 20px;
+  padding-bottom: 5px;
+  text-align: center;
+  font-size: 20px;
 }

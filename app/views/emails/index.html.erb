@@ -1,0 +1,23 @@
+<p style="font-size: 35px;" class="top">Stay in touch with Ari!</p>
+<br>
+<p>Enter your email address and we'll notify you of upcoming runs!</p>
+
+<div class="email_div">
+	<%= form_for(@email) do |f| %>
+		<div style="padding: 5px;">
+			<%= f.label(:name) %>
+			<%= f.text_field(:name, placeholder: 'Enter name here') %>
+		</div>
+
+		<div style="padding: 5px;">
+			<%= f.label(:email) %>
+			<%= f.text_field(:email, placeholder: 'Enter email here') %>
+		</div>
+		
+		<div style="padding: 5px;">
+			<%= f.submit 'Enter'%>
+		</div>
+	<% end %>
+</div>
+
+<%= image_tag('highfive.jpeg', alt: 'Ari high five', style: 'display: block; margin: auto; width: 40%;')%>
