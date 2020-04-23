@@ -11,7 +11,7 @@ class RunsController < ApplicationController
     uploaded_file = params[:runs]
 
     # Added the csv test file to the tmp/db folder
-    csv_file = File.join Rails.root, 'tmp', 'db', uploaded_file.original_filename
+    csv_file = File.join 'test', 'workers', uploaded_file.original_filename
 
     RunUploadWorker.perform_async(csv_file)
     end_time = Time.zone.now
